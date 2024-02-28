@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+
+    --hue: 194;
+    --bg-color: hsl(var(--hue), 5%, 7%);
+    --bg-controls-color: hsl(var(--hue), 0%, 14%);
+    --btn-primary-color: hsl(var(--hue), 100%, 63%);
+    --btn-secondary-color: hsl(var(--hue), 40%, 98%);
+    --tt-color: hsl(var(--hue), 40%, 98%);
+}
+
+html.light {
+    --bg-color: hsl(var(--hue), 40%, 98%);
+    --tt-color: hsl(var(--hue), 5%, 7%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+    display: none;
+}
+
+#toggle-mode {
+    position: absolute;
+    right: 3.2rem;
+    top: 3.2rem;
+
+    font-size: 3.2rem;
+    line-height: 0rem;
+
+    color: var(--tt-color);
+}
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+
+    margin: -1px;
+    padding: 0px;
+
+    border: none;
+    
+    appearance: none;
+
+    position: absolute;
+    overflow: hidden;
+}
+
+body {
+    display: grid;
+    place-content: center;
+
+    height: 100vh;
+
+    background-color: var(--bg-color);
+    
+    color: var(--tt-color);
+}
+
+#app {
+    display: grid;
+    justify-items: center;
+}
+
+#timer {
+    font-size: 9.6rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+#controls {
+    gap: 1.6rem;
+
+    margin: 1.6rem 1.6rem;
+    padding: 2.2rem 4rem;
+    
+    background-color: var(--bg-controls-color);
+
+    border-radius: 999rem;
+}
+
+button {
+    background: none;
+    border: none;
+
+    color: var(--btn-primary-color);
+
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+}
+
+.secondary {
+    color: var(--btn-secondary-color);
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-none,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high{
+    display: none;
+}
