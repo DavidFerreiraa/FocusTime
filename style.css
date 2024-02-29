@@ -88,6 +88,9 @@ button {
     background: none;
     border: none;
 
+    font-size: 3.2rem;
+    line-height: 0rem;
+
     color: var(--btn-primary-color);
 
     cursor: pointer;
