@@ -1,4 +1,5 @@
 import state from "./state.js"
+import { reset } from "./actions.js"
 import * as elements from  "./elements.js"
 
 export function countdown() {
@@ -11,9 +12,14 @@ export function countdown() {
 
     seconds--;
 
-    if(seconds <= 0) {
+    if (seconds < 0) {
         seconds = 59;
         minutes --;
+    }
+
+    if (minutes < 0) {
+        reset()
+        return;
     }
 
     updateDisplay(minutes, seconds);
